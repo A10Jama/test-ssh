@@ -1,13 +1,23 @@
-STEP 1: Creating an SSH Key Pair
+## STEP 1: Creating an SSH Key Pair
 
 Open Git Bash
-Change directory to your main folder: cd /path/to/main/folder
-Create a new directory called .ssh: mkdir .ssh
-Generate a new SSH key pair: ssh-keygen -t rsa -b 4096 -C "email@example.com"
+Change directory to your main folder: 
+
+cd 
+
+Create a new directory called .ssh: 
+
+mkdir .ssh
+
+Generate a new SSH key pair:
+
+ssh-keygen -t rsa -b 4096 -C "email@example.com"
+
 Choose a name for your key pair (e.g. id_rsa for private key and id_rsa.pub for public key)
 Press enter twice to use the default settings (no passphrase)
 (optional) If you want to delete the key pair, run: rm /path/to/key/pair
-STEP 2: Registering the Public Key with GitHub
+
+## STEP 2: Registering the Public Key with GitHub
 
 Open Git Bash
 
@@ -23,18 +33,23 @@ Click on SSH and GPG keys, then click New SSH key
 
 Enter a title for your key (e.g. My SSH Key)
 
-Paste the public key into the Key field
+Go back on Bash and use Code : cat 
+
+example : cat ahmed-github-key.pub
+
+then Paste the public key into the Key field
 
 Click Add SSH key
 
-STEP 3: Adding the Private Key to the SSH Agent
+## STEP 3: Adding the Private Key to the SSH Agent
 
 Open Git Bash
 Start the SSH agent: eval ssh-agent -s
 Add the private key to the SSH agent: ssh-add /path/to/private/key
 Test the connection: ssh -T git@github.com
 Type "yes" if prompted to add GitHub to the list of known hosts
-STEP 4: Creating a Test Repository
+
+## STEP 4: Creating a Test Repository
 
 Open GitHub in a web browser
 
@@ -48,7 +63,7 @@ Choose "Initialize this repository with a README" and click Create repository
 
 Open Git Bash
 
-Change directory to where you want to create the repository: cd /path/to/parent/folder
+Change directory to where you want to create the repository: cd parent/folder
 
 Create a new directory for the repository: mkdir test_ssh
 
@@ -66,7 +81,7 @@ Exit the editor: press Ctrl+X
 
 Print the contents of the README.md file: cat README.md
 
-STEP 5: Pushing the Repository to GitHub
+## STEP 5: Pushing the Repository to GitHub
 
 Open Git Bash
 Change directory to the repository: cd /path/to/test_ssh
